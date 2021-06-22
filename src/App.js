@@ -1,23 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import { SnackbarProvider } from 'notistack';
+import TutorialsList from './components/TutorialsList';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <h1>Welcome to your tutorials</h1>
       </header>
+      <SnackbarProvider maxSnack={1} anchorOrigin={{ horizontal: 'right', vertical: 'top' }}> 
+        <TutorialsList />
+      </SnackbarProvider>
     </div>
   );
 }
